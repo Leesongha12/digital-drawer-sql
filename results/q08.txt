@@ -1,0 +1,10 @@
+Q08: LEFT JOIN: 독서 기록이 없는 작품
+
+SQL
+SELECT n.novel_id, n.title FROM novel n LEFT JOIN reading_log l ON n.novel_id=l.novel_id WHERE l.log_id IS NULL ORDER BY n.novel_id;
+
+RESULT
+novel_id	title
+11	겨울 정원의 계약
+12	새벽의 연금술사
+(2 rows)

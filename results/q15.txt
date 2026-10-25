@@ -1,0 +1,17 @@
+Q15: 인덱스: 날짜 범위 조회(Q04)의 전체 스캔 비용을 줄이기 위한 날짜 인덱스
+
+SQL
+CREATE INDEX IF NOT EXISTS idx_reading_log_read_on ON reading_log(read_on);
+
+RESULT
+CREATE INDEX: success
+
+INDEXES
+seq	name	unique	origin	partial
+0	idx_reading_log_read_on	0	c	0
+(1 rows)
+
+QUERY PLAN (SQLite EXPLAIN QUERY PLAN)
+id	parent	notused	detail
+3	0	164	SEARCH reading_log USING INDEX idx_reading_log_read_on (read_on>? AND read_on<?)
+(1 rows)

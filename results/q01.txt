@@ -1,0 +1,18 @@
+Q01: 기본 조회: 평점 4점 이상인 독서 기록
+
+SQL
+SELECT log_id, reader_id, novel_id, rating FROM reading_log WHERE rating >= 4 ORDER BY log_id;
+
+RESULT
+log_id	reader_id	novel_id	rating
+3	3	3	4
+4	4	4	5
+8	8	8	4
+9	1	9	5
+13	5	3	4
+14	6	4	5
+19	3	9	5
+23	7	3	4
+28	4	8	4
+29	5	9	5
+(10 rows)

@@ -1,0 +1,9 @@
+Q03: 기본 조회: 제목에 마법이 들어간 작품
+
+SQL
+SELECT novel_id, title, author FROM novel WHERE title LIKE '%마법%' ORDER BY novel_id;
+
+RESULT
+novel_id	title	author
+4	퇴근 후 마법사	작가04
+(1 rows)

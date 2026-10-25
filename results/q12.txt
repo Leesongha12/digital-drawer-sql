@@ -1,0 +1,10 @@
+Q12: 서브쿼리: 독서 기록이 없는 작품(Q08과 동일 요구)
+
+SQL
+SELECT n.novel_id, n.title FROM novel n WHERE NOT EXISTS (SELECT 1 FROM reading_log l WHERE l.novel_id=n.novel_id) ORDER BY n.novel_id;
+
+RESULT
+novel_id	title
+11	겨울 정원의 계약
+12	새벽의 연금술사
+(2 rows)

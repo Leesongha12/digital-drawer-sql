@@ -1,0 +1,17 @@
+Q14: DELETE: 잘못 입력했다고 가정한 30번 기록 삭제
+
+SQL
+DELETE FROM reading_log WHERE log_id=30;
+
+RESULT
+affected_rows: 1
+
+BEFORE
+log_id	reader_id	novel_id	read_on	episodes_read	minutes_spent	rating	note
+30	6	10	2026-10-15	3	10	NULL	샘플 독서 기록
+(1 rows)
+
+AFTER
+log_id	reader_id	novel_id	read_on	episodes_read	minutes_spent	rating	note
+
+(0 rows)

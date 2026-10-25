@@ -1,0 +1,17 @@
+Q13: UPDATE: 1번 기록의 메모 수정
+
+SQL
+UPDATE reading_log SET note='다음 회차도 읽고 싶은 작품' WHERE log_id=1;
+
+RESULT
+affected_rows: 1
+
+BEFORE
+log_id	reader_id	novel_id	read_on	episodes_read	minutes_spent	rating	note
+1	1	1	2026-09-01	2	15	2	샘플 독서 기록
+(1 rows)
+
+AFTER
+log_id	reader_id	novel_id	read_on	episodes_read	minutes_spent	rating	note
+1	1	1	2026-09-01	2	15	2	다음 회차도 읽고 싶은 작품
+(1 rows)

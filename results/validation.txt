@@ -1,0 +1,33 @@
+SQLite 3.50.4
+
+PRAGMA foreign_keys = 1
+
+초기 행 수: {'genre': 10, 'reader': 10, 'novel': 12, 'reading_log': 30}
+
+PASS FK
+SQL: INSERT INTO novel VALUES (99,999,'없는 장르','테스트',10)
+실제 오류: FOREIGN KEY constraint failed
+
+PASS UNIQUE
+SQL: INSERT INTO genre VALUES (99,'로맨스판타지')
+실제 오류: UNIQUE constraint failed: genre.name
+
+PASS NOT NULL
+SQL: INSERT INTO reader VALUES (99,NULL,'test@example.com')
+실제 오류: NOT NULL constraint failed: reader.nickname
+
+PASS CHECK
+SQL: INSERT INTO reading_log VALUES (99,1,1,'2026-10-25',0,10,3,'오류')
+실제 오류: CHECK constraint failed: episodes_read > 0
+
+PASS RESTRICT
+SQL: DELETE FROM reader WHERE reader_id=1
+실제 오류: FOREIGN KEY constraint failed
+
+최종 행 수: {'genre': 10, 'reader': 10, 'novel': 12, 'reading_log': 29}
+
+PASS Q08 = Q12
+
+PASS UPDATE / DELETE
+
+PASS foreign_key_check / integrity_check

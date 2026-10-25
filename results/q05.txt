@@ -1,0 +1,20 @@
+Q05: INNER JOIN: 작품과 장르
+
+SQL
+SELECT n.novel_id, n.title, g.name AS genre FROM novel n INNER JOIN genre g ON n.genre_id=g.genre_id ORDER BY n.novel_id;
+
+RESULT
+novel_id	title	genre
+1	달빛 상담소	로맨스판타지
+2	봄날의 약속	현대로맨스
+3	용의 도서관	정통판타지
+4	퇴근 후 마법사	현대판타지
+5	검 끝의 바람	무협
+6	사라진 편지	미스터리
+7	별의 항로	SF
+8	왕궁의 기록관	역사
+9	골목 책방	일상
+10	지도 밖의 섬	모험
+11	겨울 정원의 계약	로맨스판타지
+12	새벽의 연금술사	현대로맨스
+(12 rows)

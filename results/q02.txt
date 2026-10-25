@@ -1,0 +1,13 @@
+Q02: 기본 조회: 회차 수가 많은 작품 TOP 5
+
+SQL
+SELECT novel_id, title, total_episodes FROM novel ORDER BY total_episodes DESC, novel_id LIMIT 5;
+
+RESULT
+novel_id	title	total_episodes
+12	새벽의 연금술사	180
+11	겨울 정원의 계약	170
+10	지도 밖의 섬	160
+9	골목 책방	150
+8	왕궁의 기록관	140
+(5 rows)

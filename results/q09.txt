@@ -1,0 +1,16 @@
+Q09: 집계: 독자별 읽은 분량과 시간
+
+SQL
+SELECT reader_id, COUNT(*) AS sessions, SUM(episodes_read) AS episodes, SUM(minutes_spent) AS minutes FROM reading_log GROUP BY reader_id ORDER BY episodes DESC, reader_id;
+
+RESULT
+reader_id	sessions	episodes	minutes
+3	4	22	100
+4	4	19	90
+2	4	18	80
+5	4	16	110
+1	4	14	90
+6	4	13	70
+8	3	9	60
+7	3	6	75
+(8 rows)

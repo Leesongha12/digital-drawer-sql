@@ -1,0 +1,18 @@
+Q07: LEFT JOIN: 기록이 없는 독자를 포함한 독자별 기록 수
+
+SQL
+SELECT r.reader_id, r.nickname, COUNT(l.log_id) AS log_count FROM reader r LEFT JOIN reading_log l ON r.reader_id=l.reader_id GROUP BY r.reader_id, r.nickname ORDER BY r.reader_id;
+
+RESULT
+reader_id	nickname	log_count
+1	독자01	4
+2	독자02	4
+3	독자03	4
+4	독자04	4
+5	독자05	4
+6	독자06	4
+7	독자07	3
+8	독자08	3
+9	독자09	0
+10	독자10	0
+(10 rows)
